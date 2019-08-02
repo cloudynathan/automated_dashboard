@@ -212,3 +212,16 @@ output$p5 <- renderPlot({ggplot(df5agglong, aes(x = prep_course, y = avg_score))
 shinyApp(ui, server)
 
 
+
+########temp_query_holding...probably can delete later#############
+myQuery1 <- "SELECT gender, 'math' AS 'subject', AVG(math) AS 'avg_score'
+              	FROM studentperformance
+              	GROUP BY gender 
+              UNION SELECT gender, 'reading' AS 'subject', AVG(reading) AS 'avg_score'
+              	FROM studentperformance
+              	GROUP BY gender 
+              UNION SELECT gender, 'writing' AS 'subject', AVG(writing) AS 'avg_score'
+              	FROM studentperformance
+              	GROUP BY gender"
+p1 <- dbGetQuery(pool, myQuery1)
+
