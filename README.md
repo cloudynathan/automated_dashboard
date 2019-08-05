@@ -1,2 +1,3 @@
 # automated_dashboard
-automated daily query from mySQL to shinydashboard
+
+This app queries data from mySQL, creates a dashboard, and automatically updates information.
